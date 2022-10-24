@@ -1,0 +1,13 @@
+{
+    "name": "rleleurch/lunaria-shop",
+    "type": "project",
+    "require": {
+        "php-amqplib/php-amqplib": "^2.8",
+      "ext-json": "*"
+    },
+  "autoload": {
+    "psr-4": {
+      "Shop\\": "/"
+    }
+  }
+}
