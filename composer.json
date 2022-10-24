@@ -3,7 +3,8 @@
     "type": "project",
     "require": {
         "php-amqplib/php-amqplib": "^2.8",
-      "ext-json": "*"
+      "ext-json": "*",
+        "twig/twig": "^3.4"
     },
   "autoload": {
     "psr-4": {
