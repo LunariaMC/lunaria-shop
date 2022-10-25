@@ -1,23 +1,21 @@
 <?php
-include("RabbitConnection.php");
-use Shop\RabbitConnection;
-use Twig\Environment;
-use Twig\Loader\ArrayLoader;
-use Twig\Loader\FilesystemLoader;
+require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/Loader.php';
+use Shop\Loader;
 
-$conn = new RabbitConnection("127.0.0.1", "5672", "guest", "guest");
-//$conn->sendMessage("Papipomme", 2);
-$conn->close();
+$twig = Loader::init();
 
-$request = $_SERVER['REQUEST_URI'];
+session_start();
 
-$loader = new FilesystemLoader(__DIR__ . '/templates/');
-$twig = new Environment($loader, [
-    'cache' => __DIR__ . '/compilation_cache/',
-]);
+if(htmlspecialchars($_POST['username']) == null && htmlspecialchars($_SESSION['username']) == null) {
+    echo $twig->render('login.twig', [
+        "title" => "Lunaria - Boutique"
+    ]);
+} else {
+    if(htmlspecialchars($_SESSION['username']) == null) $_SESSION['username'] = htmlspecialchars($_POST['username']);
 
-switch ($request) {
-    default:
-        echo $twig->render(__DIR__ . "/templates/index.twig");
-        break;
+    echo $twig->render('index.twig', [
+        "title" => "Lunaria - Boutique",
+        "username" => htmlspecialchars($_SESSION['username'])
+    ]);
 }
