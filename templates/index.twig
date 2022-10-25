@@ -4,11 +4,27 @@
     <title>{{ title }}</title>
 
     <script src="//api.dedipass.com/v1/pay.js"></script>
+    <link rel="stylesheet" href="assets/style/style.css">
 </head>
 <body>
-    <h1>Lunaria - Boutique</h1>
+<section class="header container">
+    <section class="header title">
+        <p class="header logo">Lunaria</p>
+        <p class="header sublogo">Boutique</p>
+    </section>
+</section>
 
-    <p>Boutique</p>
-    <div data-dedipass="631f4893d642b6b2dabf12dd15092d72" data-dedipass-custom=""></div>
+<section class="shop wrapper">
+    <section class="shop container" id="dedipass-container">
+        <section class="shop title">
+            <p><img src="https://www.mc-heads.net/head/{{ username }}/25" style="width: 20px" alt="Tête du joueur"> Bienvenue {{ username }}</p>
+        </section>
+        <div data-dedipass="631f4893d642b6b2dabf12dd15092d72" data-dedipass-custom=""></div>
+
+        <a href="index.php?logout=true"><button class="btn back">Revenir à la connexion</button></a>
+    </section>
+
+</section>
+
 </body>
 </html>

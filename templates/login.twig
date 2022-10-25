@@ -2,13 +2,27 @@
 <html lang="fr">
 <head>
     <title>{{ title }}</title>
+    <link rel="stylesheet" href="assets/style/style.css">
 </head>
 <body>
-<h1>Lunaria - Boutique</h1>
+<section class="header container">
+    <section class="header title">
+        <p class="header logo">Lunaria</p>
+        <p class="header sublogo">Boutique</p>
+    </section>
+</section>
 
-<form method="post">
-    <input name="username" placeholder="Pseudonyme">
-    <input type="submit" value="Se connecter">
-</form>
+<section class="shop wrapper">
+    <section class="shop container login-form">
+        <p class="title">Attention</p>
+        <p class="subtitle">Avant de consulter la boutique vous devez vous connecter</p>
+        <form method="post">
+            <label>
+                <input type="text" name="username" placeholder="Pseudonyme">
+            </label>
+            <input type="submit" value="Se connecter">
+        </form>
+    </section>
+</section>
 </body>
 </html>

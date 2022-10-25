@@ -8,6 +8,8 @@ abstract class Loader {
     private static $loader;
 
     public static function init() {
+        ini_set('display_errors', '0');
+
         self::$loader = new FilesystemLoader(__DIR__ . "/templates");
         self::$twig = new Environment(self::$loader, [
             'cache' => false

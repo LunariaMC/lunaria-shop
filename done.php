@@ -30,6 +30,8 @@ else {
         //$conn = new RabbitConnection("127.0.0.1", "5672", "guest", "guest");
         //$conn->sendMessage("Papipomme", $virtual_currency);
         //$conn->close();
+        session_destroy();
+        session_unset();
     }
     else {
         // Le code est invalide

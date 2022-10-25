@@ -6,13 +6,12 @@ use Shop\Loader;
 $twig = Loader::init();
 
 session_start();
-
-if(htmlspecialchars($_POST['username']) == null && htmlspecialchars($_SESSION['username']) == null) {
+if(!isset($_POST['username']) && !isset($_SESSION['username']) && $_SESSION['username'] == null) {
     echo $twig->render('login.twig', [
         "title" => "Lunaria - Boutique"
     ]);
 } else {
-    if(htmlspecialchars($_SESSION['username']) == null) $_SESSION['username'] = htmlspecialchars($_POST['username']);
+    if(isset($_SESSION['username'])) $_SESSION['username'] = htmlspecialchars($_POST['username']);
 
     echo $twig->render('index.twig', [
         "title" => "Lunaria - Boutique",

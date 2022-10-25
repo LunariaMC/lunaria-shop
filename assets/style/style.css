@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@font-face {
+    font-family: Amigos;
+    src: url(../fonts/Amigos.ttf);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat Regular', serif;
+}
+html, body {
+    height: 100%;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.header.container {
+    width: 100%;
+    height: auto;
+    background-color: #18132F;
+    border-bottom: #342874 12px solid;
+    text-align: center;
+    color: white;
+    padding-bottom: 5px;
+}
+.logo {
+    font-family: 'Amigos', serif;
+    font-size: 40px;
+}
+
+
+.shop.wrapper {
+    text-align: center;
+    margin: auto;
+    height: 90%;
+    background: url("../../assets/images/background.png") fixed center no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shop.container {
+    background-color: white;
+    padding: 50px;
+    width: auto;
+}
+
+/* Login Page */
+.shop.login-form > .title {
+    color: #F84646;
+    font-size: 40px;
+}
+.shop.login-form > .subtitle {
+    color: #F84646;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+form input[type=text]  {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+form input[type=submit] {
+    width: 100%;
+    background-color: #66C5B4;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    border: #66C5B4 2px solid;
+    transition-duration: .4s;
+}
+form input[type=submit]:hover {
+    background-color: white;
+    color: #66C5B4;
+    box-shadow: 5px 5px 5px lightgray;
+
+}
+
+/* Shop page */
+.shop.title {
+    text-align: left;
+}
+#dedipass-container {
+    width: 50%;
+}
