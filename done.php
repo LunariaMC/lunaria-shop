@@ -7,10 +7,6 @@ use Shop\RabbitConnection;
 
 $twig = Loader::init();
 
-//$conn = new RabbitConnection("127.0.0.1", "5672", "guest", "guest");
-//$conn->sendMessage("Papipomme", 2);
-//$conn->close();
-
 session_start();
 if(!isset($_COOKIE['username'])) {
     die("Une erreur est survenue lors du chargement de la page, merci de contacter un admin sur le discord.\nhttps://discord.lunaria-mc.net");
