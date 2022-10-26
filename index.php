@@ -5,16 +5,14 @@ use Shop\Loader;
 
 $twig = Loader::init();
 
-session_start();
-if(!isset($_POST['username']) && !isset($_SESSION['username']) && $_SESSION['username'] == null) {
-    echo $twig->render('login.twig', [
-        "title" => "Lunaria - Boutique"
-    ]);
-} else {
-    if(isset($_SESSION['username'])) $_SESSION['username'] = htmlspecialchars($_POST['username']);
-
+if(isset($_GET['username'])) {
+    setcookie("username", htmlspecialchars($_GET['username']), time()+60*60*24*30);
     echo $twig->render('index.twig', [
         "title" => "Lunaria - Boutique",
-        "username" => htmlspecialchars($_SESSION['username'])
+        "username" => htmlspecialchars($_GET['username'])
+    ]);
+} else {
+    echo $twig->render('login.twig', [
+        "title" => "Lunaria - Boutique"
     ]);
 }

@@ -13,7 +13,6 @@
 }
 html, body {
     height: 100%;
-    overflow: hidden;
     scroll-behavior: smooth;
 }
 
@@ -31,6 +30,25 @@ html, body {
     font-size: 40px;
 }
 
+.btn {
+    width: 100%;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    transition-duration: .4s;
+}
+.btn.back {
+    background-color: #F84646;
+    border: #F84646 2px solid;
+}
+.btn:hover {
+    background-color: white;
+    box-shadow: 5px 5px 5px lightgray;
+}
+.btn.back:hover {
+    color: #F84646;
+}
 
 .shop.wrapper {
     text-align: center;
@@ -43,7 +61,7 @@ html, body {
 }
 .shop.container {
     background-color: white;
-    padding: 50px;
+    padding: 40px;
     width: auto;
 }
 
@@ -88,4 +106,19 @@ form input[type=submit]:hover {
 }
 #dedipass-container {
     width: 50%;
+}
+
+/* Done page */
+.confirm {
+    color: #66C5B4;
+}
+.deny {
+    color: #F84646;
+}
+.deny.icon, .confirm.icon {
+    font-size: 50px;
+}
+a, a:after, a:before {
+    text-decoration: none;
+    color: #342874;
 }

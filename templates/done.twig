@@ -3,11 +3,41 @@
 <head>
     <title>{{ title }}</title>
 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="assets/style/style.css">
+    <script src="https://kit.fontawesome.com/5c377d9019.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>Lunaria - Boutique</h1>
+<section class="header container">
+    <section class="header title">
+        <p class="header logo">Lunaria</p>
+        <p class="header sublogo">Boutique</p>
+    </section>
+</section>
 
-<p>{{ message }}</p>
+<section class="shop wrapper">
+    <section class="shop container">
+        {% if message == 0 %}
+            <p class="deny icon"><i class="fa-solid fa-xmark"></i></p>
+            <p class="deny title">Vous devez entrer un code. <br></p>
+            <p class="deny subtitle">En cas de soucis, merci de nous contacter sur <a href="https://discord.lunaria-mc.net" target="_blank">discord</a>.</p>
+        {% endif %}
+        {% if message == 1 %}
+            <p class="confirm icon"><i class="fa-solid fa-check"></i></p>
+            <p class="confirm title">Votre achat a bien été enregistré.</p>
+            <p class="confirm subtitle">Votre compte en jeu a bien été crédité. Merci de votre soutien au serveur et bon jeu ! <br></p>
+            <p class="confirm subtitle">En cas de soucis, merci de nous contacter sur <a href="https://discord.lunaria-mc.net" target="_blank">discord</a>.</p>
+        {% endif %}
+        {% if message == 2 %}
+            <p class="deny icon"><i class="fa-solid fa-xmark"></i></p>
+            <p class="deny title">Votre code est invalide.</p>
+            <p class="deny subtitle">Merci de réessayer ou de nous contacter sur <a href="https://discord.lunaria-mc.net" target="_blank">discord</a>.</p>
+        {% endif %}
+
+    </section>
+</section>
+
 </body>
 </html>
